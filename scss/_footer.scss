@@ -1,0 +1,111 @@
+.footer-inner{
+    position: relative;   
+    padding: 67px 0 199px 0;
+    iframe{
+        @include position(absolute,0,0,0,0,null);
+    }
+}
+
+.footer-inner-block{
+    position: relative;
+    z-index: 2;
+    padding: 45px 40px 30px 40px;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px 0 $shadow;
+    a{
+        @include text($openS,14px,none,none,$black,400,null);
+        @include flex(row,flex-start,nowrap,null);
+        margin-bottom: 20px;
+        span:nth-child(1){
+            margin-right: 17px;
+        }
+    }
+}
+
+.footer-inner-block__title{
+    margin-bottom: 30px;
+}
+
+.footer-info{
+    background-color: $headerFormBg;
+    padding: 48px 0 52px 0;
+    text-align: center;
+}
+
+.footer-info-block-link{
+    margin-bottom: 38px;
+    a{
+        @include text($openS,13px,none,underline,$footerText,400,null);
+    }
+}
+
+.footer-info-block-design{
+    display: none;
+}
+
+.footer-info-block-year{
+    @include text($openS,13px,none,none,$footerText,400,null);
+}
+
+@include mediaQuery(min-width,768px){
+    .footer-inner{
+        padding: 62px 0 85px 0;
+        &:before{
+            @include lines;
+            left: 597px;
+        }
+    }
+    
+    .footer-inner-block{
+        max-width: 388px;
+        padding: 66px 60px 50px 60px;
+    }
+
+    .footer-inner-block__title{
+        margin-bottom: 53px;
+    }
+
+    .footer-info{
+        padding: 25px 0;
+    }
+    
+    .footer-info-block{
+        @include flex(row,space-between,nowrap,baseline);
+    }
+
+    .footer-info-block-link{
+        margin: 0;
+        order: 2;
+    }
+}
+
+@include mediaQuery(min-width,1170px){
+    .footer-inner{
+        padding: 121px 0 147px 0;
+        &:before{
+            left: 50%;
+        }
+    }
+
+    .footer-inner-block{
+        max-width: 460px;
+        padding: 85px 82px 99px 88px;
+    }
+
+    .footer-info{
+        padding: 16px 0;
+    }
+
+    .footer-info-block-link{
+        padding-left: 6px;
+    }
+
+	.footer-info-block-design{
+        display: block;
+        @include text($myPro,13px,none,none,$footerText,400,null);
+        order: 3;
+        letter-spacing: 0.6px;
+    }
+
+}
